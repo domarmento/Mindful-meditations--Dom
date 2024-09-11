@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comments - Journal Genie</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/comments.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Journal Genie</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="journal.html">Journal</a></li>
+                <li><a href="comments.html">Comments</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Journal Entries and AI Insights</h2>
+        <div id="entryList"></div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Journal Genie. All rights reserved.</p>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const entryList = document.getElementById('entryList');
+
+        async function loadEntries() {
+            try {
+                const response = await fetch('http://localhost:3000/api/entries');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const entries = await response.json();
+                entryList.innerHTML = entries.map(entry => `
+                    <div class="entry">
+                        <h3>${entry.title}</h3>
+                        <p>${entry.content}</p>
+                        <div class="ai-comment">
+                            <h4>AI Insights:</h4>
+                            <p>${entry.aiComment}</p>
+                        </div>
+                    </div>`
+                ).join('');
+            } catch (error) {
+                console.error('Error loading entries:', error);
+                entryList.innerHTML = '<p>Failed to load entries. Please try again later.</p>';
+            }
+        }
+
+        loadEntries();
+    });
+    </script>
+</body>
+</html>

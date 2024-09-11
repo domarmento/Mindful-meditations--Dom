@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal - Mindful Meditations</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/journal.css">
+    <link href="https://fonts.googleapis.com/css2?family=Suse:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-lamp fa-2x"></i>
+                <h1>Mindful Meditations</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="journal.html" class="active">Journal</a></li>
+                    <li><a href="comments.html">Comments</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>My Journal</h2>
+            <button id="addEntryBtn" class="btn btn-primary">New Entry</button>
+            
+            <form id="entryForm" class="hidden">
+                <input type="text" id="entryTitle" placeholder="Title" required>
+                <textarea id="entryContent" placeholder="Write your thoughts here..." required></textarea>
+                <button type="submit" class="btn btn-submit">Save Entry</button>
+            </form>
+
+            <div id="entriesList" class="entries-grid"></div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Mindful Meditations. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scripts/journal.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+#addEntryBtn {
+    background-color: #4a4e69;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+#entryForm {
+    background-color: var(--card-background);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+}
+
+#entryForm input,
+#entryForm textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: inherit;
+}
+
+#entryForm textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.entries-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.entry {
+    background-color: var(--card-background);
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.entry:hover {
+    transform: translateY(-5px);
+}
+
+.entry h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.entry p {
+    margin-bottom: 1rem;
+}
+
+.ai-comment {
+    background-color: var(--primary-light);
+    border-radius: 5px;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.ai-comment h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}

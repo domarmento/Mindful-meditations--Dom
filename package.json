@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@huggingface/inference": "^2.8.0",
+    "cors": "^2.8.5",
+    "express": "^4.20.0",
+    "sequelize": "^6.37.3",
+    "sqlite3": "^5.1.7"
+  }
+}
